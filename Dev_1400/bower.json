@@ -1,0 +1,22 @@
+{
+  "name": "dev_1400",
+  "description": "personal site",
+  "main": "index.js",
+  "authors": [
+    "A Yang"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ayang10/Dev_1400",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "animate.css": "^3.5.2"
+  }
+}
