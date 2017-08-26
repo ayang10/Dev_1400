@@ -913,7 +913,7 @@ TOP BARS
 .footer-btm {
   margin-top: 30px;
   padding: 20px;
-  background-color: #0c0c0c;
+  background-color: #111;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px; }
 
@@ -947,7 +947,7 @@ TOP BARS
     text-transform: uppercase;
     color: #fff; }
   #footer-option .footer-btm {
-    background-color: #0c0c0c; }
+    background-color: #111; }
   #footer-option .contact a {
     color: #777; }
     #footer-option .contact a:hover {
