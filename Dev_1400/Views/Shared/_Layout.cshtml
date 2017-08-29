@@ -197,6 +197,7 @@
     <script type="text/javascript" src="~/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
     <script type="text/javascript" src="~/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
 
+    @*<script type="text/javascript" src="~/assets/js/custom.js"></script>*@
     <script type="text/javascript" src="~/assets/js/typed.js"></script>
    
     <script type="text/javascript">
@@ -210,6 +211,12 @@
                     backDelay: 3000 // pause before backspacing
                     });
                 });
+
+                //sticky header on scroll
+                $(document).ready(function () {
+                    $(".sticky").sticky({ topSpacing: 0 });
+                });
+
     </script>
      
     @*@Scripts.Render("~/bundles/jquery")

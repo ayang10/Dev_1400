@@ -183,7 +183,14 @@
     <Content Include="assets\css\style.css" />
     <Content Include="assets\img\ayang.png" />
     <Content Include="assets\img\lightbulb.jpg" />
+    <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\typed.js" />
+    <Content Include="assets\sass\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="assets\sass\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <Content Include="bower_components\animate.css\animate.css" />
     <Content Include="bower_components\animate.css\animate.min.css" />
     <Content Include="bower_components\animate.css\gulpfile.js" />
@@ -1126,6 +1133,9 @@
     <Content Include="bower_components\wow\spec\coffeescripts\helpers\SpecHelper.coffee" />
     <Content Include="bower_components\wow\spec\coffeescripts\wow-spec.coffee" />
     <Content Include="bower_components\wow\src\wow.coffee" />
+    <Content Include="assets\sass\style.css.map">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
