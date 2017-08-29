@@ -20,6 +20,12 @@ namespace Dev_1400.Controllers
             return View();
         }
 
+        public ActionResult Resume()
+        {
+
+          return View();
+        }
+
         public ActionResult Contact()
         {
             //ViewBag.Message = "Your contact page.";
