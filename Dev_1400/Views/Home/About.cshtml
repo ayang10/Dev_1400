@@ -1,7 +1,70 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@*<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>*@
 
-<p>Use this area to provide additional information.</p>
+
+<div class="breadcrumb-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>About </h4>
+      </div>
+      <div class="col-sm-6 hidden-xs text-right">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="active">About</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div><!--breadcrumbs-->
+<div class="divide80"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 margin20">
+      <h3 class="heading">A little about me</h3>
+      <p class="p-lg"><h2>My name is A Yang</h2></p>
+      <!--<h4>Other information</h4>-->
+      <p class="p-lg">
+        I discovered the art of programming when I was a senior in high school.  Taking a web design class caught my attention because
+        you enter a virtual  world of endless possibilities and creative challenges and results.
+        My interest drew me toward graduating with a major in Computer Science at University of North Carolina at
+        Charlotte.
+      </p>
+
+      <p class="p-lg">I love problem solving and the excitement of all of my finished programs.</p>
+      <p class="p-lg">
+        In my free time, I like to go about improving my programming skills and finding better ways to
+        further create more efficient code.
+      </p>
+      <p class="p-lg">Student at Coderfoundry.</p>
+      <p class="p-lg">I am looking forward to creating amazing websites for my families and friends.</p>
+
+      <div class="row">
+        <div class="col-md-5">
+
+          <button class="btn btn-info" data-toggle="collapse" data-target="#content">Random facts</button>
+          <div class="collapse" id="content">
+            <div class="well">
+              <ul>
+                <li>Soccer for 18 years</li>
+                <li>Tennis for 3 years</li>
+                <li>PowerLifter Competitor</li>
+                <li>Chess Enthusiast</li>
+                <li>Import Car Enthusiast</li>
+                <li>Bass Fishing/Kayak Enthusiast</li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img src="~/assets/img/IMG_AYang.jpg" class="img-responsive" alt="">
+    </div>
+  </div><!--about intro-->
+  </div>
+  <div class="divide60"></div>
