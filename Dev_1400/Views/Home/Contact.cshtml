@@ -1,17 +1,56 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="breadcrumb-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Contact </h4>
+            </div>
+            <div class="col-sm-6 hidden-xs text-right">
+                <ol class="breadcrumb">
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li>Contact</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div><!--breadcrumbs-->
+<div class="divide60"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-sm-offset-1 margin30 sky-form-columns contact-sky-option">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center-heading">
+                        <h2>Contact</h2>
+                        <span class="center-line"></span>
+                        <p>
+                            Feel Free to contact me if you have any questions, Thank You!
+                        </p>
+                    </div>
+                </div>
+            </div><!--center heading row-->
+            <div class="row margin40">
+                <div class="col-md-6 margin30">
+                    <div class="contact-option-circle">
+                        <i class="fa fa-phone"></i>
+                        <p>
+                            (704)-458-7170
+                        </p>
+                    </div><!--contact option circle-->
+                </div><!--contact option detail box col-->
+                <div class="col-md-6 margin30">
+                    <div class="contact-option-circle">
+                        <i class="fa fa-envelope"></i>
+                        <p>
+                            <a href="mailto:Developer.ayang@gmail.com">Developer.ayang@gmail.com</a> 
+                        </p>
+                    </div><!--contact option circle-->
+                </div><!--contact option detail box col-->
+            </div>
+        </div>
+    </div>
+</div><!--contact advanced container end-->
+<div class="divide60"></div>
