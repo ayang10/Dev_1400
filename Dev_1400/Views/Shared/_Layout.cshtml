@@ -83,8 +83,8 @@
                     <li>
                         <a href="blog.html">Blog</a>
                     </li>
-                    <li>
-                        <a href="portfolio.html">Portfolio </a>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Portfolio" ? "active" : "")">
+                        <a href="@Url.Action("Portfolio", "Home")">Portfolio </a>
                     </li><!--features-->
                     <!--mega menu-->
                   <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")">
