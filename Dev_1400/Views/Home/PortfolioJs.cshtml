@@ -2,6 +2,25 @@
    
 }
 
+@section css {
+<link href="~/bower_components/SyntaxHighlighter/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="~/bower_components/SyntaxHighlighter/styles/shThemeRDark.css" rel="stylesheet" type="text/css" />
+}
+
+@section scripts
+ {
+  <script type="text/javascript" src="~/bower_components/SyntaxHighlighter/scripts/XRegExp.js"></script>
+  <script type="text/javascript" src="~/bower_components/SyntaxHighlighter/scripts/shCore.js"></script>
+  <script type="text/javascript" src="~/bower_components/SyntaxHighlighter/scripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="~/bower_components/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+  
+  <script type="text/javascript" src="~/assets/js/portfoliojs.js"></script>
+
+  <script type="text/javascript">
+    SyntaxHighlighter.all();
+  </script>
+}
+
 <div class="breadcrumb-wrap">
   <div class="container">
     <div class="row">
@@ -24,7 +43,9 @@
     <div class="section-box-twelve">
       <!---->
       <figure>
-        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="" data-toggle="modal" data-target="#math">
+          <i class="fa fa-search"></i>
+        </a>
       </figure>
       <img src="https://rukminim1.flixcart.com/image/704/704/calculator/s/e/b/casio-fx-991-ms-fx-991-ms-original-imaeh4zfcagve5hg.jpeg?q=70" class="img-responsive" />
     </div>
@@ -62,3 +83,123 @@
 
 </div><!--/container-->
 <div class="divide60"></div>
+
+
+ <!-- -------------------------------------Beginning of Javascript exercise 1-------------------------------------------------------------------->
+
+
+<div class="modal fade" id="math" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h1 class="modal-title" id="myModalLabel">Math Questions</h1>
+      </div>
+      <div class="container-fluid">
+        <div class="modal-body col-sm-12">
+          <div class=" panel panel-default">
+
+            <div class="panel-body">
+
+              <!-- Insert exercise code here!-->
+              <div class="row">
+
+                <!-- Everything is in one row, divided into two cols -->
+                <div class="col-md-6">
+                  <!--<div class="col-md-5"-->
+                  <!-- input and explan what needs to be done-->
+                  <h3>Requirement:</h3>
+
+                  <p>
+                    Write a program that accepts a series of at least 5 numbers from the user and performs
+                    the following actions:
+                  </p>
+                  <ol type="a">
+                    <li>Determine which number is the least</li>
+                    <li>Determine which number is the greatest</li>
+                    <li>Determine the mean of the numbers</li>
+                    <li>Determine the sum of all the numbers</li>
+                    <li>Determine the product of all the numbers</li>
+                  </ol>
+                  <div class="container">
+                    <h4>Enter five numbers:</h4>
+                    <input type="text" id="number1" size=10 maxlength="10" value="0" class="text-center">
+                    <input type="text" id="number2" size=10 maxlength="10" value="0" class="text-center">
+                    <input type="text" id="number3" size=10 maxlength="10" value="0" class="text-center">
+                    <input type="text" id="number4" size=10 maxlength="10" value="0" class="text-center">
+                    <input type="text" id="number5" size=10 maxlength="10" value="0" class="text-center">
+                  </div>
+                  <br />
+                  <p>
+                    <button class="btn btn-success center-block" name="find" onclick="calculate()">Submit</button>
+                    <br />
+
+                    <div id="testresult1"></div>
+                    <div id="testresult2"></div>
+                    <div id="testresult3"></div>
+                    <div id="testresult4"></div>
+                    <div id="testresult5"></div>
+                    <div id="errormessage"></div>
+                </div>
+                <div class="col-md-12">
+                  <!-- This is the col for the source code -->
+                  <div class="pre">
+                    <pre class="brush: js">
+<script type="text/javascript">
+  function calculate() {
+    var value1 = parseFloat($("#number1").val());
+    var value2 = parseFloat($("#number2").val());
+    var value3 = parseFloat($("#number3").val());
+    var value4 = parseFloat($("#number4").val());
+    var value5 = parseFloat($("#number5").val());
+    if (!isNaN(value1) && !isNaN(value2) && !isNaN(value3) && !isNaN(value4) && !isNaN(value4)) {
+      var lowNum = Math.min(value1, value2, value3, value4, value5);
+      var maxNum = Math.max(value1, value2, value3, value4, value5);
+      var mean = ((value1 + value2 + value3 + value4 + value5) / 5);
+      var sum = parseFloat((value1 + value2 + value3 + value4 + value5));
+      var product = (value1 * value2 * value3 * value4 * value5);
+      var x = document.getElementById("testresult1");
+      x.innerHTML = "<p>The lowest value entered is:  " + lowNum + "</p>";
+      var y = document.getElementById("testresult2");
+      y.innerHTML = "<p>The greatest value entered is: " + maxNum + "</p>";
+      var z = document.getElementById("testresult3");
+      z.innerHTML = "<p>The mean is: " + mean + "</p>";
+      var a = document.getElementById("testresult4");
+      a.innerHTML = "<p>The sum is " + sum + "</p>";
+      var b = document.getElementById("testresult5");
+      b.innerHTML = "<p>The product is " + product + "</p>";
+    }
+    else {
+      var c = document.getElementById("errormessage");
+      c.innerHTML = "<h2><p>Correct your entry!!!!!</p></h2>";
+      $("#testresult1").html('')
+      $("#testresult2").html('')
+      $("#testresult3").html('')
+      $("#testresult4").html('')
+      $("#testresult5").html('')
+    }
+  }
+</script>
+                                        </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- javaScripts exercise 1-->
+<!--end of javascript exercise 1-->
