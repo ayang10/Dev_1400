@@ -22,20 +22,22 @@ namespace Dev_1400.Controllers
 
         public ActionResult Resume()
         {
-
           return View();
         }
 
         public ActionResult Portfolio()
         {
+          return View();
+        }
 
-            return View();
+        public ActionResult PortfolioJs()
+        {
+          return View();
         }
 
         public ActionResult Contact()
         {
             //ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

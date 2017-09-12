@@ -1,158 +1,71 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+  ViewBag.Title = "Portfolio";
 }
 
 
 <div class="breadcrumb-wrap">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h4>Portfolio</h4>
-            </div>
-            <div class="col-sm-6 hidden-xs text-right">
-                <ol class="breadcrumb">
-                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                    <li class="active">Portfolio Projects</li>
-                </ol>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Portfolio</h4>
+      </div>
+      <div class="col-sm-6 hidden-xs text-right">
+        <ol class="breadcrumb">
+          <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+          <li class="active">Portfolio Projects</li>
+        </ol>
+      </div>
     </div>
+  </div>
 </div><!--breadcrumbs-->
 <div class="divide80"></div>
 <div class="container">
-    <h1 class="text-center">CSS3 Image Hover Effects</h1>
-    <div class="col-md-4 center-block">
-        <div class="section-box-one">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://ilovelyhdwallpaper.com/wp-content/uploads/2016/03/WMotors-Fenyr-Super-Sport-Car-Wallpaper.jpg" class="img-responsive" />
-        </div>
+  <div class="col-lg-4 center-block">
+    <div class="section-box-four">
+      <!---->
+      <figure>
+        <h3>Javascript Exercises</h3>
+        <p>Javascript exercises showcase</p>
+        <a href="@Url.Action("PortfolioJs", "Home")" class="btn btn-read">Go To</a>
+      </figure>
+      <img src="http://ilovelyhdwallpaper.com/wp-content/uploads/2016/03/WMotors-Fenyr-Super-Sport-Car-Wallpaper.jpg" class="img-responsive" />
     </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-two">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://www.tayloredwebs.co.uk/wp-content/uploads/2016/06/web-design-and-graphic-design-wallpapers.jpg" class="img-responsive" />
-        </div>
+  </div>
+  <div class="col-lg-4 center-block">
+    <div class="section-box-one">
+      <!---->
+      <figure>
+        <h3>CarFinder Info</h3>
+        <p>CarFinder is a application that will search and find different vehicle from a sql database.  This was implemented by using AngularJS.</p>
+        <a href="#" class="btn btn-read">Go To</a>
+      </figure>
+      <img src="http://ilovelyhdwallpaper.com/wp-content/uploads/2016/03/WMotors-Fenyr-Super-Sport-Car-Wallpaper.jpg" class="img-responsive" />
     </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-three">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://www.ayushmaantechnologies.com/wp-content/uploads/2017/01/5-things-to-consider-when-selecting-a-web-design-agency-1.jpg" class="img-responsive" />
-        </div>
+  </div>
+  <div class="col-lg-4 center-block">
+    <div class="section-box-two">
+      <!---->
+      <figure>
+        <h3>Fam Budget</h3>
+        <p>
+          Fam Budget is basically a financial planner where you can help budget your/family monthly expenses.  This will allow for an accurate calculation of each individual expenses
+        and as well as savings.  This was implemented using MVC, bootsrap, jquery, highchart, Sass, etc.</p>
+        <a href="#" class="btn btn-read">Go To</a>
+      </figure>
+      <img src="http://www.tayloredwebs.co.uk/wp-content/uploads/2016/06/web-design-and-graphic-design-wallpapers.jpg" class="img-responsive" />
     </div>
-    <div> </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-four">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://ilovelyhdwallpaper.com/wp-content/uploads/2016/03/WMotors-Fenyr-Super-Sport-Car-Wallpaper.jpg" class="img-responsive" />
-        </div>
+  </div>
+  <div> </div>
+  <div class="col-lg-4 center-block">
+    <div class="section-box-three">
+      <!---->
+      <figure>
+        <h3>BugTracker</h3>
+        <p>BugTracker is a ticket distributor.  The application is to help with bug fixes and feature discussions.  This was implemented using MVC, bootstrap, jquery, Sass, etc.</p>
+        <a href="#" class="btn btn-read">Go To</a>
+      </figure>
+      <img src="http://www.ayushmaantechnologies.com/wp-content/uploads/2017/01/5-things-to-consider-when-selecting-a-web-design-agency-1.jpg" class="img-responsive" />
     </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-five">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://www.tayloredwebs.co.uk/wp-content/uploads/2016/06/web-design-and-graphic-design-wallpapers.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-six">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://www.ayushmaantechnologies.com/wp-content/uploads/2017/01/5-things-to-consider-when-selecting-a-web-design-agency-1.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div> </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-seven">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://ilovelyhdwallpaper.com/wp-content/uploads/2016/03/WMotors-Fenyr-Super-Sport-Car-Wallpaper.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-eight">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://www.tayloredwebs.co.uk/wp-content/uploads/2016/06/web-design-and-graphic-design-wallpapers.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-nine">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://www.ayushmaantechnologies.com/wp-content/uploads/2017/01/5-things-to-consider-when-selecting-a-web-design-agency-1.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div> </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-ten">
-            <!---->
-            <figure>
-                <h3>Service</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
-                <a href="#" class="btn btn-read">Read More</a>
-            </figure>
-            <img src="http://ilovelyhdwallpaper.com/wp-content/uploads/2016/03/WMotors-Fenyr-Super-Sport-Car-Wallpaper.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-eleven">
-            <!---->
-            <figure>
-                <a href="#" class="btn pull-left"><i class="fa fa-search"></i> View</a>
-                <a href="#" class="btn pull-right">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-            </figure>
-            <img src="http://www.tayloredwebs.co.uk/wp-content/uploads/2016/06/web-design-and-graphic-design-wallpapers.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div class="col-md-4 center-block">
-        <div class="section-box-twelve">
-            <!---->
-            <figure>
-                <a href="#"><i class="fa fa-search"></i></a>
-            </figure>
-            <img src="http://www.ayushmaantechnologies.com/wp-content/uploads/2017/01/5-things-to-consider-when-selecting-a-web-design-agency-1.jpg" class="img-responsive" />
-        </div>
-    </div>
-    <div> </div>
-</div>
+  </div>
+</div><!--/container-->
 <div class="divide60"></div>
