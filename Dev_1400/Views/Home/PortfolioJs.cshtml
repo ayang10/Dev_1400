@@ -54,7 +54,9 @@
     <div class="section-box-twelve">
       <!---->
       <figure>
-        <a href="#"><i class="fa fa-search"></i></a>
+        <a href="#" data-toggle="modal" data-target="#factorial">
+          <i class="fa fa-search"></i>
+        </a>
       </figure>
       <img src="http://3.bp.blogspot.com/-Od-FQyrPu5E/UEDjEWlSZgI/AAAAAAAAA2E/SYWFfcWa9RI/s1600/Factorial_of_a_number_Maths_tricks_and_tips.jpg" class="img-responsive" />
     </div>
@@ -203,14 +205,91 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
 <!-- javaScripts exercise 1-->
 <!--end of javascript exercise 1-->
+
+<!--Beginning of javascript exercise 2-->
+
+<div class="modal fade" id="factorial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h1 class="modal-title" id="myModalLabel">Factorial</h1>
+            </div>
+            <div class="container-fluid">
+                <div class="modal-body col-sm-12">
+                    <div class=" panel panel-default">
+
+                        <div class="panel-body">
+
+                            <!-- Insert exercise code here!-->
+                            <div class="row">
+
+                                <!-- Everything is in one row, divided into two cols -->
+                                <div class="col-md-6">
+                                    <!--<div class="col-md-5"-->
+                                    <!-- input and explan what needs to be done-->
+                                    <h3>Requirement:</h3>
+
+                                    <p>
+                                        Enter in a number to find the factorial of a number, Avoid entering in negative number.
+                                    </p>
+                                    <div class="container">
+                                        <h4>Enter in a number to find the factorial</h4>
+                                        <input type="text" id="num" size=5 maxlength="10" value="0" class="text-center">
+                                    </div>
+                                    <br />
+                                    <p>
+                                        <div class="container">
+                                            <input type="button" id="findfactorial" value="Submit" />
+                                        </div>
+                                        <br />
+
+                                        <div id="output"></div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <!-- This is the col for the source code -->
+                                    <div class="pre">
+                                        <pre class="brush: js">
+    var calc = function () {
+        var f = function (val) { //number enter into textfield
+            if (!isNaN(val)) {
+                val = parseFloat(val);
+                if (val < 0) {
+                    return "invalid value";
+                } else if (val === 1 || val === 0) { //value equal number
+                    return 1;
+                } else {
+                    return val * f(val - 1);
+                }
+            }
+            return "value passed is not valid"; //return invalid entry
+        };
+        return {
+            f: f //loop through function, until number ends. 5x4x3x2x1
+        };
+    }();
+    $("#findfactorial").click(function () {
+        $("#output").html('').append(calc.f($("#num").val()));
+    });
+
+                                        </pre>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--End of javascript exercise 2-->

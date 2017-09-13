@@ -52,3 +52,28 @@ function Clear() {
 
 // Exercise 1
 
+// Exercise 2 
+
+var calc = function () {
+    var f = function (val) { //number enter into textfield
+        if (!isNaN(val)) {
+            val = parseFloat(val);
+            if (val < 0) {
+                return "invalid value";
+            } else if (val === 1 || val === 0) { //value equal number
+                return 1;
+            } else {
+                return val * f(val - 1);
+            }
+        }
+        return "value passed is not valid"; //return invalid entry
+    };
+    return {
+        f: f //loop through function, until number ends. 5x4x3x2x1
+    };
+}();
+$("#findfactorial").click(function () {
+    $("#output").html('').append(calc.f($("#num").val()));
+});
+
+// Exercise 2 
