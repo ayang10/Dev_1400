@@ -54,26 +54,24 @@ function Clear() {
 
 // Exercise 2 
 
-var calc = function () {
-    var f = function (val) { //number enter into textfield
-        if (!isNaN(val)) {
-            val = parseFloat(val);
-            if (val < 0) {
-                return "invalid value";
-            } else if (val === 1 || val === 0) { //value equal number
-                return 1;
-            } else {
-                return val * f(val - 1);
-            }
-        }
-        return "value passed is not valid"; //return invalid entry
-    };
-    return {
-        f: f //loop through function, until number ends. 5x4x3x2x1
-    };
-}();
-$("#findfactorial").click(function () {
-    $("#output").html('').append(calc.f($("#num").val()));
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+
+    // This is it! Recursion!!
+    return n * factorial(n - 1);
+}
+
+document.getElementById("findfactorial").addEventListener("click", function () {
+    var number = parseFloat(document.getElementById('num').value)
+    var b = document.getElementById("output");
+    if (number < 0) {
+        b.innerHTML = "<h2>Please enter a value greater than 0</h2>";
+    }
+    else {
+        b.innerHTML = "<p>The factorial number is " + factorial(number) + "</p>";
+    }
 });
 
 // Exercise 2 
