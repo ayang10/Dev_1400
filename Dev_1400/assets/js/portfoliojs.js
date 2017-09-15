@@ -75,3 +75,39 @@ document.getElementById("findfactorial").addEventListener("click", function () {
 });
 
 // Exercise 2 
+
+// Exercise 3
+
+$("#findfizzbuzz").click(function () {
+    //retreiving value from user input
+    //parse to get string as integer
+    var userinput1 = parseInt($("#input1").val());
+    var userinput2 = parseInt($("#input2").val());
+    //set value empty
+    var out = $('#printout');
+    if ((userinput1 <= 0) || (userinput2 <= 0)) {
+        out.html('').append('Please enter correct values!');
+    }
+    else {
+        out.html('');
+        for (var i = 1; i <= 100; i++) {
+            if (((i % userinput1) === 0) && ((i % userinput2) === 0)) {
+                out.append('FizzBuzz, ');
+            }
+            else if ((i % userinput1) === 0) {
+                out.append('Fizz, ')
+            }
+            else if ((i % userinput2) === 0) {
+                out.append('Buzz, ');
+            }
+            else {
+                out.append(i + ', ');
+            }
+        }
+    }
+});
+$("#clearthis").click(function () {
+    $("#printout").html('');
+});
+
+// Exercise 3
