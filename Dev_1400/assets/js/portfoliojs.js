@@ -111,3 +111,30 @@ $("#clearthis").click(function () {
 });
 
 // Exercise 3
+
+// Exercise 4
+
+$("#findpalindrome").click(function () {
+    var word = $("#getword").val();
+    //this will allow user to input any word to number
+    var removeChar = word.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+    //this will check in word in reverse
+    var check = removeChar.split('').reverse().join('');
+    if (!isNaN(removeChar)) {
+        $("#ifpalindrome").append('<h1>' + word + " is not a WORD!" + '</h1>');
+    }
+        //check if else statment
+    else if (removeChar === check) {
+        //print out message
+        $("#ifpalindrome").append('<h3>' + word + " is a Palindrome!!" + '</h3>');
+    }
+    else {
+        //print out message
+        $("#ifpalindrome").append('<h3>' + word + " is not a Palindrome!" + '</h3>');
+    };
+});
+$("#enclean").click(function () {
+    $("#ifpalindrome").html('');
+});
+
+// Exercise 4

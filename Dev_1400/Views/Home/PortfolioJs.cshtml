@@ -81,7 +81,7 @@
         <div class="section-box-twelve">
             <!---->
             <figure>
-                <a href="#"><i class="fa fa-search"></i></a>
+                <a href="#" data-toggle="modal" data-target="#palindrome"><i class="fa fa-search"></i></a>
             </figure>
             <img src="https://i2.wp.com/cuteandkids.com/wp-content/uploads/2017/04/palindrome.jpeg?resize=800%2C566" class="img-responsive" />
         </div>
@@ -285,7 +285,6 @@ document.getElementById("findfactorial").addEventListener("click", function () {
 </div>
 
 <!--End of javascript exercise 2-->
-
 <!--Beginning of Javascript/Jquery exercise 3-->
 
 <div class="modal fade" id="fizzbuzz" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -298,50 +297,50 @@ document.getElementById("findfactorial").addEventListener("click", function () {
             <div class="container-fluid">
                 <div class="modal-body">
 
-                            <!-- Insert exercise code here!-->
-                            <div class="row">
+                    <!-- Insert exercise code here!-->
+                    <div class="row">
 
-                                <!-- Everything is in one row, divided into two cols -->
-                                <div class="col-md-6">
-                                    <!--<div class="col-md-5"-->
-                                    <!-- input and explan what needs to be done-->
-                                    <h3>Instructions:</h3>
+                        <!-- Everything is in one row, divided into two cols -->
+                        <div class="col-md-6">
+                            <!--<div class="col-md-5"-->
+                            <!-- input and explan what needs to be done-->
+                            <h3>Instructions:</h3>
 
-                                    <p>
-                                        Write a program that accepts two numbers between 1 and 100 from the user. The program
-                                        then iterates through all numbers from 1 to 100, printing numbers in ascending order to the
-                                        screen. For each number that is a multiple of the first number input by the user, print "Fizz"
-                                        instead of the number. For each number that is a multiple of the second number input by
-                                        the user, print "Buzz" instead of the number. For numbers that are multiples of both
-                                        numbers, print "FizzBuzz" instead of the number.
-                                    </p>
-                                    <div class="container">
-                                        <h4>Enter in 2 numbers: First Number: Fizz, Second Number: Buzz</h4>
-                                        <input type="number" id="input1" size=5 maxlength="10" value="0" class="text-center">
-                                        <input type="number" id="input2" size=5 maxlength="10" value="0" class="text-center">
-                                    </div>
+                            <p>
+                                Write a program that accepts two numbers between 1 and 100 from the user. The program
+                                then iterates through all numbers from 1 to 100, printing numbers in ascending order to the
+                                screen. For each number that is a multiple of the first number input by the user, print "Fizz"
+                                instead of the number. For each number that is a multiple of the second number input by
+                                the user, print "Buzz" instead of the number. For numbers that are multiples of both
+                                numbers, print "FizzBuzz" instead of the number.
+                            </p>
+                            <div class="container">
+                                <h4>Enter in 2 numbers: First Number: Fizz, Second Number: Buzz</h4>
+                                <input type="number" id="input1" size=5 maxlength="10" value="0" class="text-center">
+                                <input type="number" id="input2" size=5 maxlength="10" value="0" class="text-center">
+                            </div>
 
-                                    <br />
-                                    <p>
-                                        <input type="button" id="findfizzbuzz" value="Enter" />
-                                        <input type="button" id="clearthis" value="Clear" />
-                                        <br />
+                            <br />
+                            <p>
+                                <input type="button" id="findfizzbuzz" value="Enter" />
+                                <input type="button" id="clearthis" value="Clear" />
+                                <br />
 
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
 
-                                                    <div id="printout"></div>
+                                            <div id="printout"></div>
 
-                                                </div>
-                                            </div>
                                         </div>
-
+                                    </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <!-- This is the col for the source code -->
-                                    <div class="pre">
-                                        <pre class="brush: js">
+
+                        </div>
+                        <div class="col-md-12">
+                            <!-- This is the col for the source code -->
+                            <div class="pre">
+                                <pre class="brush: js">
     $("#findfizzbuzz").click(function () {
         //retreiving value from user input
         //parse to get string as integer
@@ -374,10 +373,10 @@ document.getElementById("findfactorial").addEventListener("click", function () {
         $("#printout").html('');
     });
                                         </pre>
-                                    </div>
-
-                                </div>
                             </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -385,3 +384,82 @@ document.getElementById("findfactorial").addEventListener("click", function () {
 </div>
 
 <!--End of javascript/jquery exercise 3-->
+<!--Beginning of javascript/jquery exercise 4-->
+
+
+<div class="modal fade" id="palindrome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h1 class="modal-title" id="myModalLabel">Palindrome!!</h1>
+            </div>
+            <div class="container-fluid">
+                <div class="modal-body col-sm-12">
+
+                    <!-- Insert exercise code here!-->
+                    <div class="row">
+                        <!-- Everything is in one row, divided into two cols -->
+                        <div class="col-md-6">
+                            <!--<div class="col-md-5"-->
+                            <!-- input and explan what needs to be done-->
+                            <h3>Instructions:</h3>
+
+                            <p>
+                                Write a program that determines whether a word is a Palindrome (the same backward as it
+                                is forward – “radar” for example). Display the result to the user.
+                            </p>
+                            <div class="container">
+                                <h4>Enter in a word</h4>
+                                <input type="text" id="getword" size=20 value="" class="text-center">
+                            </div>
+
+                            <br />
+                            <p>
+                                <input type="button" id="findpalindrome" value="Submit" />
+                                <input type="button" id="enclean" value="Clear" />
+                                <br />
+
+                                <div id="ifpalindrome"></div>
+
+                        </div>
+                        <div class="col-md-12">
+                            <!-- This is the col for the source code -->
+                            <div class="pre">
+                                <pre class="brush: js">
+    $("#findpalindrome").click(function () {
+        var word = $("#getword").val();
+        //this will allow user to input any word to number
+        var removeChar = word.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+        //this will check in word in reverse
+        var check = removeChar.split('').reverse().join('');
+        if (!isNaN(removeChar)) {
+            $("#ifpalindrome").append('
+<h1>' + word + " is not a WORD!" + '</h1>');
+        }
+            //check if else statment
+        else if (removeChar === check) {
+            //print out message
+            $("#ifpalindrome").append('
+<h3>' + word + " is a Palindrome!!" + '</h3>');
+        }
+        else {
+            //print out message
+            $("#ifpalindrome").append('
+<h3>' + word + " is not a Palindrome!" + '</h3>');
+        };
+    });
+    $("#enclean").click(function () {
+        $("#ifpalindrome").html('');
+    });
+                                        </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--End of javascript/jquery exercise 4-->
