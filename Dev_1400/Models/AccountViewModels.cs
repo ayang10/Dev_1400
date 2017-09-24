@@ -64,6 +64,16 @@ namespace Dev_1400.Models
 
     public class RegisterViewModel
     {
+        //add name
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        //add last name
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
