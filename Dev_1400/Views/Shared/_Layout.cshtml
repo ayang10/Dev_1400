@@ -80,8 +80,8 @@
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Resume" ? "active" : "")">
                         <a href="@Url.Action("Resume", "Home")">Resume</a>
                     </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Blog" ? "active" : "")">
+                        <a href="@Url.Action("Index", "Posts")">Blog</a>
                     </li>
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Portfolio" ? "active" : "")">
                         <a href="@Url.Action("Portfolio", "Home")">Portfolio </a>
@@ -188,6 +188,7 @@
     <script type="text/javascript" src="~/bower_components/wow/dist/wow.min.js"></script>
     <script type="text/javascript" src="~/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
     <script type="text/javascript" src="~/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src='//cdn.tinymce.com/4/tinymce.min.js'></script>
 
     @*<script type="text/javascript" src="~/assets/js/custom.js"></script>*@
     <script type="text/javascript" src="~/assets/js/typed.js"></script>
