@@ -4,6 +4,8 @@
     ViewBag.Title = "Create";
 }
 
+<div class="divide20"></div>
+
 <div class="container">
     
     <h2>Create</h2>
@@ -62,15 +64,14 @@
         @Html.ActionLink("Back to List", "Index")
     </div>
 </div><!--end container-->
+
 @section Scripts{
-    <script type="text/javascript" src='//cdn.tinymce.com/4/tinymce.min.js'></script>
-    <script type="text/javascript">
+<script type="text/javascript">
   tinymce.init({
     selector: 'textarea',
     theme: 'modern',
     width: 943,
-    height: 300,
-
+    height: 300
   });
-    </script>
+</script>
 }
