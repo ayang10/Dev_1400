@@ -30,9 +30,7 @@ namespace Dev_1400.Models
         public string BodyText { get; set; }
 
         public string MediaUrl { get; set; }
-
-        public bool Published { get; set; }
-
+        
         //joined table //add virtual for lazy loading
         public virtual ICollection<Comment> Comments { get; set; }
 
@@ -99,7 +97,7 @@ namespace Dev_1400.Models
         public string AuthorId { get; set; } //author
         public string EditorId { get; set; }//editior 
         [AllowHtml]
-        public string Body { get; set; }
+        public string BodyText { get; set; }
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Updated { get; set; }
         public int? ParentCommentId { get; set; }

@@ -4,6 +4,17 @@
     ViewBag.Title = "Details";
 }
 
+@section scripts{
+    <script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea',
+            theme: 'modern',
+            width: 943,
+            height: 300
+        });
+    </script>
+}
+
 <div class="divide20"></div>
 
 <div class="container">
@@ -25,13 +36,6 @@
 
             </div>
 
-            @*<br />
-                <div class="container">
-
-                    @Html.ActionLink("Add Comment", "Create", "Comments", new { id = Model.Id }, new { @class = "btn btn-default"})
-
-                </div>*@
-
             <br />
 
             <section class="col-md-8">
@@ -45,7 +49,7 @@
                                 <div class="panel panel-primary-dark">
                                     <div class="panel-body">
                                         <img src="~/assets/img/anonymous.png" alt="" class="thumbnail alignleft" width="65" height="65">
-                                        <p>@Html.Raw(c.Body)</p>
+                                        <p>@Html.Raw(c.BodyText)</p>
                                     </div>
                                     <div class="panel-footer">
                                         <div class="row">
@@ -61,10 +65,6 @@
 
                                                 </div>
                                             }
-                                            @*<div class="col-lg-2 col-md-3 col-sm-4 pull-right">
-
-                                                    @Html.ActionLink("Reply", "Create", "Comments", new { id = @c.PostId}, new { @class = "btn btn-default" })
-                                                </div>*@
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,6 @@
 
                 </ul>
             </section> <!-- comments -->
-
 
         </div> <!--end col-md-12-->
         <div class="row">

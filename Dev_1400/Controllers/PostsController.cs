@@ -18,7 +18,7 @@ namespace Dev_1400
 
 
         // GET: Posts
-        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult Posts(string sortOrder, string currentFilter, string searchString, int? page)
         {
 
             ViewBag.CurrentSort = sortOrder;
@@ -44,7 +44,7 @@ namespace Dev_1400
             {
                 postList = postList.Where(s => s.Title.Contains(searchString)
                                        || s.BodyText.Contains(searchString)
-                                       || s.Comments.Any(c => c.Body.Contains(searchString))
+                                       || s.Comments.Any(c => c.BodyText.Contains(searchString))
                                        || s.Comments.Any(c => c.Author.UserName.Contains(searchString)));
             }
             else
@@ -129,7 +129,7 @@ namespace Dev_1400
 
                 db.Posts.Add(post); //add the object
                 db.SaveChanges(); //creates a sql statement and sends it out
-                return RedirectToAction("Index");
+                return RedirectToAction("Posts");
             }
 
             return View(post);
@@ -176,7 +176,6 @@ namespace Dev_1400
                 fetched.Title = post.Title;
                 fetched.BodyText = post.BodyText;
                 fetched.MediaUrl = post.MediaUrl;
-                fetched.Published = post.Published;
                 fetched.UpdateDate = post.UpdateDate;
 
                 // restricting the valid file formats to images only
@@ -192,7 +191,7 @@ namespace Dev_1400
                 post.UpdateDate = kstTime;
                 db.Entry(fetched).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Posts");
             }
 
 
@@ -227,7 +226,7 @@ namespace Dev_1400
             post.UpdateDate = new DateTimeOffset(DateTime.Now);
             db.Posts.Remove(post);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Posts");
         }
 
         protected override void Dispose(bool disposing)
