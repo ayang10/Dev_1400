@@ -101,7 +101,6 @@ namespace Dev_1400.Models
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Updated { get; set; }
         public int? ParentCommentId { get; set; }
-        public bool MarkForDeletion { get; set; }
 
         //virtual means navigation
         public virtual Post Post { get; set; }

@@ -43,8 +43,6 @@
                 <ul class="list-unstyled">
                     @foreach (var c in Model.Comments)
                     {
-                        if (!c.MarkForDeletion)
-                        {
                             <li class="comment">
                                 <div class="panel panel-primary-dark">
                                     <div class="panel-body">
@@ -69,7 +67,6 @@
                                     </div>
                                 </div>
                             </li>
-                        }
                     }
 
 
