@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Dev_1400.Models;
 
@@ -15,7 +12,7 @@ namespace Dev_1400
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Comments
-        public ActionResult Index()
+        public ActionResult Posts()
         {
             var comments = db.Comments.Include(c => c.Author).Include(c => c.Editor).Include(c => c.ParentComment).Include(c => c.Post);
             return View(comments.ToList());
@@ -44,12 +41,10 @@ namespace Dev_1400
             return View(model);
         }
 
-        // POST: Comments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PostId,AuthorId,EditorId,Body,Created,Updated,ParentCommentId")] Comment comment)
+        public ActionResult Create([Bind(Include = "Id,PostId,AuthorId,EditorId,BodyText,Created,Updated,ParentCommentId")] Comment comment)
         {
             DateTime timeUtc = DateTime.UtcNow;
             TimeZoneInfo kstZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
@@ -62,13 +57,7 @@ namespace Dev_1400
                 //comment.Created = new DateTimeOffset(DateTime.Now);
                 comment.Created = kstTime;
                 comment.AuthorId = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name).Id; //grab the id of the current login user, assign that to the AuthorId
-
-
-                //var user = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-                //comment.AuthorId = user.Id; //grab the id of the current login user, assign that to the AuthorId
-                //comment.Author = user;
-
-
+                
                 db.Comments.Add(comment);
                 db.SaveChanges();
                 return RedirectToAction("Details", "Posts", new { id = comment.PostId }); //redirect this create to Posts view Details page.
@@ -96,7 +85,7 @@ namespace Dev_1400
             }
             if (User.Identity.Name != comment.Author.UserName)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Posts");
             }
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "FirstName", comment.AuthorId);
             ViewBag.EditorId = new SelectList(db.Users, "Id", "FirstName", comment.EditorId);
@@ -106,18 +95,16 @@ namespace Dev_1400
             return View(comment);
         }
 
-        // POST: Comments/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PostId,AuthorId,EditorId,Body,Created,Updated,ParentCommentId")] Comment comment)
+        public ActionResult Edit([Bind(Include = "Id,PostId,AuthorId,EditorId,BodyText,Created,Updated,ParentCommentId")] Comment comment)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(comment).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Posts");
             }
             ViewBag.AuthorId = new SelectList(db.Users, "Id", "FirstName", comment.AuthorId);
             ViewBag.EditorId = new SelectList(db.Users, "Id", "FirstName", comment.EditorId);
@@ -127,7 +114,8 @@ namespace Dev_1400
         }
 
         // GET: Comments/Delete/5
-        public ActionResult Delete(int? id)
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete(int? id, int postId)
         {
             if (id == null)
             {
@@ -145,12 +133,12 @@ namespace Dev_1400
         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int postId)
         {
             Comment comment = db.Comments.Find(id);
             db.Comments.Remove(comment);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Posts", new { id = postId });
         }
 
         protected override void Dispose(bool disposing)

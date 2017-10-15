@@ -55,7 +55,7 @@
                                                 <i class="fa fa-user"> </i> @c.Author.UserName
                                                 <i class="fa fa-clock-o"></i> @c.Created.ToLocalTime().ToString("F")
                                             </div>
-                                            @if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                                            @if (User.IsInRole("Admin"))
                                             {
                                                 <div class="col-lg-2 col-md-3 col-sm-4">
 

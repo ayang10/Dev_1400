@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -119,8 +118,8 @@ namespace Dev_1400
                 if (Post.ImageUploadValidator.IsWebFriendlyImage(fileUpload))
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/img/"), fileName));
-                    post.MediaUrl = "~/img/" + fileName;
+                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/assets/img/"), fileName));
+                    post.MediaUrl = "~/assets/img/" + fileName;
 
                 }
 
@@ -182,8 +181,8 @@ namespace Dev_1400
                 if (Post.ImageUploadValidator.IsWebFriendlyImage(fileUpload))
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/img/"), fileName));
-                    fetched.MediaUrl = "~/img/" + fileName;
+                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/assets/img/"), fileName));
+                    fetched.MediaUrl = "~/assets/img/" + fileName;
 
                 }
 

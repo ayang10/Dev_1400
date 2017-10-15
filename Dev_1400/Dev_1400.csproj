@@ -189,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\anonymous.png" />
     <Content Include="assets\img\ayang.png" />
     <Content Include="assets\img\hero.png" />
     <Content Include="assets\img\IMG_AYang.jpg" />
@@ -1794,6 +1795,8 @@
     <Content Include="Views\Posts\Edit.cshtml" />
     <Content Include="Views\Posts\Posts.cshtml" />
     <Content Include="Views\Shared\_Comment.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
