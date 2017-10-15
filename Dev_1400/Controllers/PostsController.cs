@@ -118,7 +118,7 @@ namespace Dev_1400
                 if (Post.ImageUploadValidator.IsWebFriendlyImage(fileUpload))
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/assets/img/"), fileName));
+                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/assets/img/post/"), fileName));
                     post.MediaUrl = "~/assets/img/post/" + fileName;
 
                 }
@@ -181,7 +181,7 @@ namespace Dev_1400
                 if (Post.ImageUploadValidator.IsWebFriendlyImage(fileUpload))
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/assets/img/"), fileName));
+                    fileUpload.SaveAs(Path.Combine(Server.MapPath("~/assets/img/post"), fileName));
                     fetched.MediaUrl = "~/assets/img/post/" + fileName;
 
                 }
