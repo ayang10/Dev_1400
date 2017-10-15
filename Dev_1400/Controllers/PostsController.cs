@@ -119,7 +119,7 @@ namespace Dev_1400
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
                     fileUpload.SaveAs(Path.Combine(Server.MapPath("~/assets/img/"), fileName));
-                    post.MediaUrl = "~/assets/img/" + fileName;
+                    post.MediaUrl = "~/assets/img/post/" + fileName;
 
                 }
 
@@ -182,7 +182,7 @@ namespace Dev_1400
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
                     fileUpload.SaveAs(Path.Combine(Server.MapPath("~/assets/img/"), fileName));
-                    fetched.MediaUrl = "~/assets/img/" + fileName;
+                    fetched.MediaUrl = "~/assets/img/post/" + fileName;
 
                 }
 

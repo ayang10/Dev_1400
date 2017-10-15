@@ -1800,6 +1800,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\img\post\" />
     <Folder Include="node_modules\" />
   </ItemGroup>
   <ItemGroup>
