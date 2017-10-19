@@ -7,7 +7,25 @@
 
 }
 
-@*<div class="divide80"></div>
+<div class="breadcrumb-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Blog</h4>
+            </div>
+            <div class="col-sm-6 hidden-xs text-right">
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li>Blog</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div><!--breadcrumbs-->
+<div class="divide80"></div>
+
 @if (User.IsInRole("Admin"))
 {
     <div class="container">
@@ -21,7 +39,6 @@
         </div>
     </div>
 }
-
 <div class="container">
     <div class="row">
         <div class="col-md-3 pull-right">
@@ -44,190 +61,77 @@
 </div>
 
 
-<div class="container">
 
-    <div class="row">
-        <div class="col-md-12">
-
-            <article class="post animated fadeInDown animation-delay-6">
-
-                @if (Model.PageCount == 0)
-                {
-                    <p class="h2">No Results found!</p>
-                }
-
-                @foreach (var post in Model)
-                {
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <h1 class="post-title-size"> @Html.ActionLink(post.Title, "Details", new { @post.Id })</h1>
-                            <div class="row">
-                                <div class="col-md-6">
-
-                                    @if (post.MediaUrl != null)
-                                    {
-                                        <img src="@Url.Content(post.MediaUrl)" class="img-thumbnail" alt="Cinque Terre" width="500" height="300" />
-                                    }
-                                </div>
-                                <div class="col-xs-12 col-md-6">
-
-                                    @Html.Raw(post.BodyTextTrimmed)
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="row">
-                                <div class="col-lg-10 col-md-9 col-sm-4">
-                                    <i class="fa fa-clock-o"> @post.CreationDate.ToLocalTime().ToString("F")</i>*@
-                                    @*@post.CreationDate.ToLocalTime().ToString("D")*@
-
-                                    @*<i class="fa fa-user"> </i>A Yang
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-4">
-                                    <a href="#" class="pull-right">@Html.ActionLink("Read more", "Details", new { @post.Id }, new { @class = "btn btn-primary" }) </a>
-                                </div>
-                                <div class="col-lg-6 col-md-3 col-sm-4">
-                                    @if (post.UpdateDate != null)
-                                    {
-                                        <i>Update: @post.UpdateDate.ToString()</i>
-
-                                    }
-                                    <i>@post.Comments.Count Comments</i>
-
-                                </div>
-                                <div class="col-md-2 pull-right">
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        <p>
-                                            @Html.ActionLink("Delete Post", "Delete", new { @post.Id }, new { @class = "btn btn-danger" })
-                                        </p>
-                                    }
-                                </div>
-
-                            </div>
-                            <div class="row">
-
-
-                                <div class="col-md-2 pull-right">
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        <p>
-                                            @Html.ActionLink("Edit", "Edit", new { @post.Id }, new { @class = "btn btn-success" })
-                                        </p>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                }
-
-            </article>*@ <!-- post -->
-
-        @*</div>*@<!--close col-md-12-->
-
-    @*</div>*@<!--end row-->
-
-    @*<div class="container">
-        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-
-        @Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-    </div>
-
-</div>*@<!--end container-->
-
-<div class="breadcrumb-wrap">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h4>Blog</h4>
-            </div>
-            <div class="col-sm-6 hidden-xs text-right">
-                <ol class="breadcrumb">
-                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                    <li>Blog</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div><!--breadcrumbs-->
-<div class="divide80"></div>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="blog-post">
-                <a href="#">
-                    <div class="item-img-wrap">
-                        <img src="img/showcase-2.jpg" class="img-responsive" alt="workimg">
-                        <div class="item-img-overlay">
-                            <span></span>
+
+            @if (Model.PageCount == 0)
+            {
+                <p class="h2">No Results found!</p>
+            }
+            @foreach (var post in Model)
+            {
+                <div class="blog-post">
+                    <a href="@Url.Action("Details", "Posts", new {@post.Id })">
+                        <div class="item-img-wrap">
+                            @if (post.MediaUrl != null)
+                            {
+                                <img src="@Url.Content(post.MediaUrl)" class="img-responsive" alt="@post.Title" />
+                            }
+                            <div class="item-img-overlay">
+                                <span></span>
+                            </div>
                         </div>
-                    </div>
-                </a><!--work link-->
-                <ul class="list-inline post-detail">
-                    <li>by <a href="#">assan</a></li>
-                    <li><i class="fa fa-calendar"></i> 31st july 2014</li>
-                    <li><i class="fa fa-tag"></i> <a href="#">Sports</a></li>
-                    <li><i class="fa fa-comment"></i> <a href="#">6 Comments</a></li>
-                </ul>
-                <h2><a href="#">Lorem ipsum dollor sit amet</a></h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
-                </p>
-                <p><a href="blog-single.html" class="btn btn-theme-dark">Read More...</a></p>
-            </div><!--blog post-->
-            <div class="blog-post">
-                <a href="#">
-                    <div class="item-img-wrap">
-                        <img src="img/showcase-4.jpg" class="img-responsive" alt="workimg">
-                        <div class="item-img-overlay">
-                            <span></span>
-                        </div>
-                    </div>
-                </a><!--work link-->
-                <ul class="list-inline post-detail">
-                    <li>by <a href="#">assan</a></li>
-                    <li><i class="fa fa-calendar"></i> 31st july 2014</li>
-                    <li><i class="fa fa-tag"></i> <a href="#">Sports</a></li>
-                    <li><i class="fa fa-comment"></i> <a href="#">6 Comments</a></li>
-                </ul>
-                <h2><a href="#">Lorem ipsum dollor sit amet</a></h2>
+                    </a><!--work link-->
+                    <ul class="list-inline post-detail">
+                        <li>
+                            by
+                            <a href="#">A Yang</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-calendar"></i> @post.CreationDate.ToLocalTime().ToString("D")
+                        </li>
+                        @if (post.UpdateDate != null)
+                        {
+                            <li>
+                                <i class="fa fa-tag"></i>
+                                <span>Update: </span> @post.UpdateDate.ToString()
+                            </li>
+                        }
 
-                <p><a href="blog-single.html" class="btn btn-theme-dark">Read More...</a></p>
-            </div><!--blog post-->
-            <div class="blog-post">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe src="http://player.vimeo.com/video/57175742"></iframe>
-                </div>
-                <ul class="list-inline post-detail">
-                    <li>by <a href="#">assan</a></li>
-                    <li><i class="fa fa-calendar"></i> 31st july 2014</li>
-                    <li><i class="fa fa-tag"></i> <a href="#">Sports</a></li>
-                    <li><i class="fa fa-comment"></i> <a href="#">6 Comments</a></li>
-                </ul>
-                <h2><a href="#">Video post formate </a></h2>
+                        <li>
+                            <i class="fa fa-comment"></i>
+                            <span>@post.Comments.Count Comments</span>
+                        </li>
+                    </ul>
+                    <h2>
+                        @Html.ActionLink(post.Title, "Details", new { @post.Id })
+                    </h2>
+                    <p>
+                        @Html.Raw(post.BodyTextTrimmed)
+                    </p>
+                    <p>
+                        <a href="@Url.Action("Details", "Posts", new {@post.Id })" class="btn btn-theme-dark">Read More...</a>
+                    </p>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { @post.Id }, new { @class = "btn btn-success" })
+                        </p>
+                        <p>
+                            @Html.ActionLink("Delete Post", "Delete", new { @post.Id }, new { @class = "btn btn-danger" })
+                        </p>
 
-                <p><a href="blog-single.html" class="btn btn-theme-dark">Read More...</a></p>
-            </div><!--blog post-->
-            <div class="blog-post">
+                    }
+                </div><!--blog post-->
+            }
+            <div class="container">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-                <iframe height="170" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/62974792&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=true"></iframe>
-
-                <ul class="list-inline post-detail">
-                    <li>by <a href="#">assan</a></li>
-                    <li><i class="fa fa-calendar"></i> 31st july 2014</li>
-                    <li><i class="fa fa-tag"></i> <a href="#">Sports</a></li>
-                    <li><i class="fa fa-comment"></i> <a href="#">6 Comments</a></li>
-                </ul>
-                <h2><a href="#">Audio post formate </a></h2>
-
-                <p><a href="blog-single.html" class="btn btn-theme-dark">Read More...</a></p>
-            </div><!--blog post-->
-            <ul class="pager">
-                <li class="previous"><a href="#">&larr; Previous Page</a></li>
-                <li class="next"><a href="#">Next Page &rarr;</a></li>
-            </ul><!--pager-->
+                @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+            </div>
         </div><!--col-->
     </div><!--row for blog post-->
 </div><!--blog full main container-->
