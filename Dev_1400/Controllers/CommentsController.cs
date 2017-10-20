@@ -34,6 +34,7 @@ namespace Dev_1400
         }
 
         // GET: Comments/Create
+        [Authorize] //this limit users, you need to be logged in
         public ActionResult Create(int id)
         {
             Comment model = new Comment { PostId = id };
@@ -44,6 +45,7 @@ namespace Dev_1400
         
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize] //this limit users, you need to be logged in
         public ActionResult Create([Bind(Include = "Id,PostId,AuthorId,EditorId,BodyText,Created,Updated,ParentCommentId")] Comment comment)
         {
             DateTime timeUtc = DateTime.UtcNow;
@@ -54,7 +56,6 @@ namespace Dev_1400
 
             if (ModelState.IsValid)
             {
-                //comment.Created = new DateTimeOffset(DateTime.Now);
                 comment.Created = kstTime;
                 comment.AuthorId = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name).Id; //grab the id of the current login user, assign that to the AuthorId
                 
@@ -63,11 +64,7 @@ namespace Dev_1400
                 return RedirectToAction("Details", "Posts", new { id = comment.PostId }); //redirect this create to Posts view Details page.
             }
 
-            //ViewBag.AuthorId = new SelectList(db.ApplicationUsers, "Id", "Email", comment.AuthorId);
-            //ViewBag.EditorId = new SelectList(db.ApplicationUsers, "Id", "Email", comment.EditorId);
-            //ViewBag.ParentCommentId = new SelectList(db.Comments, "Id", "AuthorId", comment.ParentCommentId);
-            //ViewBag.PostId = new SelectList(db.Posts, "Id", "Title", comment.PostId);
-
+         
             return View(comment);
         }
 

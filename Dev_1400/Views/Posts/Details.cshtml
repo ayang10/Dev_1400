@@ -16,69 +16,81 @@
 }
 
 <div class="divide20"></div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="container">
-
+            <div class="blog-post">
                 @if (Model.MediaUrl != null)
                 {
-                    <center><img src="@Url.Content(Model.MediaUrl)" class="thumbnail" alt="Cinque Terre" width="500" height="500" /></center>
+                    <center>
+                        <img src="@Url.Content(Model.MediaUrl)" class="img-responsive" alt="workimg" />
+                    </center>
                 }
-                <h1 class="fontsize">
-                    @Html.DisplayFor(model => model.Title)
-                </h1>
-                <p class="page-header no-margin"><em>~ by A Yang | Created: @Html.DisplayFor(model => model.CreationDate) ~</em></p>
-
-                <br />
-                <p>@Html.Raw(Model.BodyText)</p>
-
-            </div>
-
-            <br />
-
-            <section class="col-md-8">
-                <h2 class="section-title">Comments</h2>
-                <ul class="list-unstyled">
-                    @foreach (var c in Model.Comments)
-                    {
-                            <li class="comment">
-                                <div class="panel panel-primary-dark">
-                                    <div class="panel-body">
-                                        <img src="~/assets/img/anonymous.png" alt="" class="thumbnail alignleft" width="65" height="65">
-                                        <p>@Html.Raw(c.BodyText)</p>
-                                    </div>
-                                    <div class="panel-footer">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-md-9 col-sm-8">
-                                                <i class="fa fa-user"> </i> @c.Author.UserName
-                                                <i class="fa fa-clock-o"></i> @c.Created.ToLocalTime().ToString("F")
-                                            </div>
-                                            @if (User.IsInRole("Admin"))
-                                            {
-                                                <div class="col-lg-2 col-md-3 col-sm-4">
-
-                                                    @Html.ActionLink("Delete", "Delete", "Comments", new { id = @c.Id, postId = @Model.Id }, new { @class = "btn btn-danger" })
-
-                                                </div>
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                    }
-
-
+                <ul class="list-inline post-detail">
+                    <li>by A Yang</li>
+                    <li>
+                        <i class="fa fa-calendar"></i> @Model.CreationDate.ToLocalTime().ToString("D")
+                    </li>
                 </ul>
-            </section> <!-- comments -->
+                <h2>@Html.DisplayFor(model => model.Title)</h2>
 
-        </div> <!--end col-md-12-->
-        <div class="row">
-            <div class="col-xs-12 col-md-6">
-                @Html.Partial("_Comment", new Dev_1400.Models.Comment { @PostId = Model.Id })
+                <p class="lead">
+                    @Html.Raw(Model.BodyText)
+                </p>
+
+            </div><!--blog post-->
+            @*<div class="about-author">
+                    <h4 class="colored-text">About the Author</h4>
+                    <img src="img/team-3.jpg" class="img-responsive" alt="">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, <span class="colored-text">adipiscing condimentum tristique</span> vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+                    </p>
+                </div>*@<!--about author-->
+            <div class="comment-post">
+                <h3>@Model.Comments.Count() Comments</h3>
+                @foreach (var c in Model.Comments)
+                {
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="comment-list">
+                                <h4>
+                                    <img src="~/assets/img/anonymous.png" class="img-responsive" alt="">
+                                    by @c.Author.UserName
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        @Html.ActionLink("Delete", "Delete", "Comments", new { id = @c.Id, postId = @Model.Id }, new { @class = "btn btn-xs btn-danger" })
+                                   
+                                    }
+                                    @*<a href="#" class="btn btn-xs btn-theme-dark">Reply</a>*@
+                                </h4>
+                                <p>
+                                    @Html.Raw(c.BodyText)
+                                </p>
+                            </div><!--comments list-->
+                        </div>
+                        @*<div class="col-md-10 col-md-offset-1">
+                                <div class="comment-list">
+                                    <h4>
+                                        <img src="img/team-3.jpg" class="img-responsive" alt="">
+                                        by User <a href="#" class="btn btn-xs btn-theme-dark">Reply</a>
+                                    </h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie
+                                    </p>
+                                </div>
+                            </div>*@
+
+                    </div>
+                }
+            </div><!--comments-->
+
+            <div class="divide60"></div>
+            <div class="comment-form">
+                <h3>Leave Comment</h3>
+                <div class="form-contact">
+                    @Html.Partial("_Comment", new Dev_1400.Models.Comment { @PostId = Model.Id })
+                </div>
             </div>
-        </div>
-    </div><!--end row-->
-
-</div><!--end container-->
+        </div><!--col-->
+    </div><!--row for blog post-->
+</div><!--blog full main container-->
