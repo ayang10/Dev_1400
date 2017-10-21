@@ -1332,6 +1332,47 @@ h1.typed-text {
   }
 }
 
+/*********border-buttons**********/
+
+.border-black {
+  border: 1px solid #333;
+  color: #000;
+  background-color: transparent;
+  &:hover {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+  }
+}
+
+.border-white {
+  border: 1px solid #fff;
+  color: #fff;
+  &:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+  }
+}
+
+.border-theme {
+  border: 1px solid #32c5d2;
+  color: #32c5d2;
+  &:hover {
+    background-color: #32c5d2;
+    border-color: #32c5d2;
+    color: #fff;
+  }
+}
+
+.btn-3d {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+}
+
+.btn-ico i {
+  margin-left: 5px;
+}
+
 /**************work and portfolio whole*******/
 /* mouse grab icon */
 
