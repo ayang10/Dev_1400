@@ -29,6 +29,16 @@
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary("", new { @class = "text-danger" })
                     <div class="form-group">
+                        @Html.LabelFor(m => m.FirstName, "First name")
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "Enter first name" })
+                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.LastName, "Last name")
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Enter last name" })
+                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
                         @Html.LabelFor(m => m.Email, "Email address")
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter email" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
