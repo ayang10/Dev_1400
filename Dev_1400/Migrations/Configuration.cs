@@ -3,8 +3,6 @@ namespace Dev_1400.Migrations
     using Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -24,11 +22,7 @@ namespace Dev_1400.Migrations
             {
                 roleManager.Create(new IdentityRole { Name = "Admin" });
             }
-            if (!context.Roles.Any(r => r.Name == "Moderator"))
-            {
-                roleManager.Create(new IdentityRole { Name = "Moderator" });
-            }
-
+            
             //assign me to the Admin role, if not already in it
             var uStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(uStore);
@@ -49,11 +43,7 @@ namespace Dev_1400.Migrations
             {
                 userManager.AddToRole(userId, "Admin");
             }
-
-
-
-
-
+            
         }
     }
 }

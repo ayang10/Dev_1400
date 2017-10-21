@@ -9,10 +9,6 @@ using System.Web.Mvc;
 
 namespace Dev_1400.Models
 {
-    //public class BlogModels
-    //{
-    //}
-
     public class Post
     {
 
@@ -35,8 +31,7 @@ namespace Dev_1400.Models
         public virtual ICollection<Comment> Comments { get; set; }
 
         private int BodyTextLimit = 900;
-
-
+        
         public string BodyTextTrimmed
         {
             get
@@ -78,9 +73,6 @@ namespace Dev_1400.Models
                 }
             }
         }
-
-
-
 
     }
 

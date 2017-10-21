@@ -77,7 +77,7 @@
             @foreach (var post in Model)
             {
                 <div class="blog-post">
-                    <a href="@Url.Action("Details", "Posts", new {@post.Id })">
+                    <a href="@Url.Action("Details", "Posts", new { @post.Id })">
                         <div class="item-img-wrap">
                             @if (post.MediaUrl != null)
                             {

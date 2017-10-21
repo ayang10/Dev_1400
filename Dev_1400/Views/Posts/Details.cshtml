@@ -56,13 +56,34 @@
                                 <h4>
                                     <img src="~/assets/img/anonymous.png" class="img-responsive" alt="">
                                     by @c.Author.UserName
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        @Html.ActionLink("Delete", "Delete", "Comments", new { id = @c.Id, postId = @Model.Id }, new { @class = "btn btn-xs btn-danger" })
-                                   
-                                    }
                                     @*<a href="#" class="btn btn-xs btn-theme-dark">Reply</a>*@
                                 </h4>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    using (Html.BeginForm("Delete", "Comments", new { id = @c.Id, postId = @Model.Id }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <input type="button" class="btn btn-xs btn-danger" value="Delete" data-toggle="modal" data-target="#@c.AuthorId" />
+                                             <!-- Modal -->
+                                            <div class="modal fade" id="@c.AuthorId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                <div class="modal-dialog modal-sm" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Are you sure you want to delete?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <input type="submit" value="Delete" class="btn btn-danger" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    }
+                                }
                                 <p>
                                     @Html.Raw(c.BodyText)
                                 </p>
