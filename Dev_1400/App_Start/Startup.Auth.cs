@@ -50,19 +50,19 @@ namespace Dev_1400
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+                consumerKey: "Y0FcMILt1llKTKuL6W2BApj4v",
+                consumerSecret: "Fh3JB1gIXfw0nvBdoum0mrt5kSPSIPvJ8qCWU4dZlf72SUu3Cu");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+            appId: "1785909641622493",
+            appSecret: "d7365d7d472e9c6f39c4930b394520b9");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "333094364194-b1n3til6jev1a2kb3keqfendekmvrcg4.apps.googleusercontent.com",
+                ClientSecret = "2k0gt7R2G_GfIa2A7cTwQFB6"
+            });
         }
     }
 }
