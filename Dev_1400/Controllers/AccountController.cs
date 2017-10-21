@@ -57,6 +57,10 @@ namespace Dev_1400.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToLocal("Index");
+            }
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
