@@ -34,7 +34,7 @@ namespace Dev_1400.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AzureConnection", throwIfV1Schema: false)
         {
         }
 
@@ -42,15 +42,9 @@ namespace Dev_1400.Models
         {
             return new ApplicationDbContext();
         }
-
-        //creates tables of objects
+        
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
-        //public System.Data.Entity.DbSet<Dev_1400.Models.Post> Posts { get; set; }
-
-        //public System.Data.Entity.DbSet<Dev_1400.Models.Comment> Comments { get; set; }
-
-        //public System.Data.Entity.DbSet<Dev_1400.Models.ApplicationUser> ApplicationUsers { get; set; }
+        
     }
 }

@@ -53,6 +53,10 @@
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -194,6 +198,7 @@
     <Content Include="assets\img\hero.png" />
     <Content Include="assets\img\IMG_AYang.jpg" />
     <Content Include="assets\img\lightbulb.jpg" />
+    <Content Include="assets\img\post\20161031_083304.jpeg" />
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\portfoliojs.js" />
     <Content Include="assets\js\typed.js" />
@@ -1003,6 +1008,7 @@
     <Content Include="bower_components\Yamm3\yamm\yamm.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1431,11 +1437,6 @@
     <Content Include="bower_components\SyntaxHighlighter\build\ext\packer\class.JavaScriptPacker.php" />
     <Content Include="bower_components\SyntaxHighlighter\build\ext\packer\example-file.php" />
     <Content Include="bower_components\SyntaxHighlighter\build\ext\packer\example-inline.php" />
-    <Content Include="bower_components\SyntaxHighlighter\build\ext\phing\bin\pear-phing" />
-    <Content Include="bower_components\SyntaxHighlighter\build\ext\phing\bin\pear-phing.bat" />
-    <Content Include="bower_components\SyntaxHighlighter\build\ext\phing\bin\phing" />
-    <Content Include="bower_components\SyntaxHighlighter\build\ext\phing\bin\phing.bat" />
-    <Content Include="bower_components\SyntaxHighlighter\build\ext\phing\bin\phing.php" />
     <Content Include="bower_components\SyntaxHighlighter\build\ext\phing\CHANGELOG" />
     <Content Include="bower_components\SyntaxHighlighter\build\ext\phing\classes\phing\BuildEvent.php" />
     <Content Include="bower_components\SyntaxHighlighter\build\ext\phing\classes\phing\BuildException.php" />
@@ -1766,6 +1767,7 @@
     <Content Include="bower_components\css-social-buttons\site\pictos-web.eot" />
     <Content Include="bower_components\css-social-buttons\site\pictos-web.ttf" />
     <Content Include="bower_components\css-social-buttons\site\pictos-web.woff" />
+    <None Include="Properties\PublishProfiles\ayangsite.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1824,7 +1826,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\img\post\" />
+    <Folder Include="bower_components\SyntaxHighlighter\build\ext\phing\bin\" />
     <Folder Include="node_modules\" />
   </ItemGroup>
   <ItemGroup>

@@ -104,7 +104,6 @@ namespace Dev_1400
         [Authorize(Roles = "Admin")]
         public ActionResult Create(Post post, HttpPostedFileBase fileUpload)
         {
-            //post.CreationDate = new DateTimeOffset(DateTime.Now);
 
             DateTime timeUtc = DateTime.UtcNow;
             TimeZoneInfo kstZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
