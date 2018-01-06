@@ -190,8 +190,10 @@
     <Content Include="assets\css\style.css" />
     <Content Include="assets\img\anonymous.png" />
     <Content Include="assets\img\ayang.png" />
+    <Content Include="assets\img\bug.jpg" />
     <Content Include="assets\img\hero.png" />
     <Content Include="assets\img\IMG_AYang.jpg" />
+    <Content Include="assets\img\javascript.jpg" />
     <Content Include="assets\img\lightbulb.jpg" />
     <Content Include="assets\img\post\20161031_083304.jpeg" />
     <Content Include="assets\js\custom.js" />
