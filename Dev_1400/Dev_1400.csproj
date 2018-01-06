@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -199,6 +200,7 @@
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\portfoliojs.js" />
     <Content Include="assets\js\typed.js" />
+    <Content Include="assets\minify-css\style.css" />
     <Content Include="assets\sass\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
