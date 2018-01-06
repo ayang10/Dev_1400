@@ -34,7 +34,7 @@ namespace Dev_1400.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("AzureConnection", throwIfV1Schema: false)
+            : base("MyConnection", throwIfV1Schema: false)
         {
         }
 
