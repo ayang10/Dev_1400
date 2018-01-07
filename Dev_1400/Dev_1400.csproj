@@ -1766,7 +1766,7 @@
     <Content Include="bower_components\css-social-buttons\site\pictos-web.eot" />
     <Content Include="bower_components\css-social-buttons\site\pictos-web.ttf" />
     <Content Include="bower_components\css-social-buttons\site\pictos-web.woff" />
-    <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
+    <None Include="Properties\PublishProfiles\personalSite.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
